@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f3f4ff;
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 550px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.error-box {
+    min-height: 18px;
+    color: #b91c1c;
+    margin-bottom: 10px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.error-box.visible {
+    opacity: 1;
+}
+
+.task-form input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #d0d3e0;
+}
+
+.task-form button {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #4f46e5;
+    color: white;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.task-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.task-title {
+    font-size: 14px;
+}
+
+.task-title.ready {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-status-badge {
+    margin-top: 4px;
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 999px;
+}
+
+.task-status-hold {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.task-status-ready {
+    background: #e5f7e9;
+    color: #15803d;
+}
+
+.task-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.task-check-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.task-actions button {
+    border-radius: 8px;
+    border: none;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: #fff;
+}
