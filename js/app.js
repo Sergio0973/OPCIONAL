@@ -74,7 +74,7 @@ async function createTask(taskText) {
 
     if (!res.ok) {
         console.error('Respuesta POST no OK:', res.status, res.statusText);
-        throw new Error('No se pudo crear la tarea');
+        throw new Error('No se pudo crear la tarea realizada');
     }
 
     return res.json();
