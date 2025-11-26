@@ -3,26 +3,84 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Lista de deberes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just Do It - Tu lista de tareas inteligente</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+    <div class="background-gradient"></div>
+
     <main class="container">
-        <h1>Just Do it</h1>
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">✨</span>
+                    <h1>Just Do It</h1>
+                </div>
+                <p class="subtitle">Transforma tus deberes en logros</p>
+            </div>
+        </header>
 
-        <!-- IMPORTANTE: id="task-form"  -->
-        <form id="task-form" class="task-form">
-            <!-- IMPORTANTE: id="task-input" -->
-            <input type="text" id="task-input" placeholder="Escribe un nuevo deber..." required />
-            <button type="submit">agregar</button>
-        </form>
-        <div id="error-box" class="error-box" aria-live="polite"></div>
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <span class="stat-number" id="total-tasks">0</span>
+                <span class="stat-label">Tareas</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="completed-tasks">0</span>
+                <span class="stat-label">Completadas</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="progress-percent">0%</span>
+                <span class="stat-label">Progreso</span>
+            </div>
+        </div>
 
-        <!-- IMPORTANTE: id="task-list" -->
-        <ul id="task-list" class="task-list">
-            <!-- Aquí se insertan las tareas con JS -->
-        </ul>
+        <!-- Task Form Section -->
+        <section class="form-section">
+            <form id="task-form" class="task-form">
+                <div class="input-wrapper">
+                    <input type="text" id="task-input" placeholder="¿Qué deber tienes que hacer hoy?" required
+                        aria-label="Ingresa un nuevo deber" />
+                    <button type="submit" class="btn-submit" aria-label="Agregar nueva tarea">
+                        <span>Agregar</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 5v14M5 12h14" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="error-box" class="error-box" aria-live="polite" role="alert"></div>
+            </form>
+        </section>
+
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="active">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+
+        <!-- Task List Section -->
+        <section class="tasks-section">
+            <ul id="task-list" class="task-list">
+                <!-- Aquí se insertan las tareas con JS -->
+            </ul>
+            <div class="empty-state" id="empty-state">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M9 11l3 3L22 4M9 11l3 3M9 11l-7 7" />
+                </svg>
+                <p>¡Aún no tienes tareas! Añade una para empezar</p>
+            </div>
+        </section>
+
+        <!-- Clear Completed Button -->
+        <div class="action-buttons">
+            <button id="clear-completed" class="btn-clear">Limpiar completadas</button>
+        </div>
     </main>
 
     <script src="js/app.js"></script>
