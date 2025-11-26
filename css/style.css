@@ -449,6 +449,26 @@ body {
     color: var(--text-muted);
 }
 
+.task-check-label {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-xs) * 0.8);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.task-status {
+    font-size: 0.95rem;
+}
+
+.task-status.status-ready {
+    color: var(--accent-success);
+}
+
+.task-status.status-hold {
+    color: var(--accent-warning);
+}
+
 /* Checkbox */
 .task-checkbox {
     width: 24px;

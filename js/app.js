@@ -163,7 +163,8 @@ function buildTaskItem(taskObj) {
     checkbox.checked = taskObj.status === 'ready';
 
     const checkText = document.createElement('span');
-    checkText.textContent = taskObj.status === 'ready' ? 'Listo' : 'Hold';
+    checkText.classList.add('task-status');
+    setStatusAppearance(checkText, taskObj.status);
 
     const checkLabel = document.createElement('label');
     checkLabel.classList.add('task-check-label');
@@ -190,7 +191,7 @@ function buildTaskItem(taskObj) {
             );
 
             tasks = tasks.map((t) => (t.id === taskObj.id ? updated : t));
-            checkText.textContent = updated.status === 'ready' ? 'Listo' : 'Hold';
+            setStatusAppearance(checkText, updated.status);
             renderTasks();
         } catch (error) {
             console.error('Error actualizando tarea:', error);
@@ -231,6 +232,13 @@ function updateClearButtonState() {
     if (clearCompletedBtn) {
         clearCompletedBtn.disabled = !hasCompleted;
     }
+}
+
+function setStatusAppearance(statusElement, status) {
+    const isReady = status === 'ready';
+    statusElement.textContent = isReady ? 'Listo' : 'Hold';
+    statusElement.classList.toggle('status-ready', isReady);
+    statusElement.classList.toggle('status-hold', !isReady);
 }
 
 // =======================
